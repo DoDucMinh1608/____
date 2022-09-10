@@ -583,7 +583,27 @@ template {
 }
 
 body {
-  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
   color: white;
-  font-size: 3rem;
+  background-color: rgb(30, 30, 30);
+}
+
+.navbar {
+  width: 90%;
+}
+.navbar .logo {
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
 }

@@ -1,7 +1,28 @@
 @use '../reset';
+@use '../utilities' as ut;
+@use 'var' as v;
 
 body {
-  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+
+header {
+  @include ut.alignCenter();
+  min-height: v.$navbar-height;
   color: white;
-  font-size: 3rem;
+  background-color: v.$navbar-bg-color;
+}
+
+.navbar {
+  width: 90%;
+
+  .logo {
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
 }
