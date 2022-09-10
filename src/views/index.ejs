@@ -16,14 +16,22 @@
   </header>
   <main>
     <section class="container">
-      <section class="main-item"></section>
-      <section class="main-item"></section>
-      <section class="main-item"></section>
-      <section class="main-item"></section>
-      <section class="main-item"></section>
-      <section class="main-item"></section>
-      <section class="main-item"></section>
+      <% 'one two three four five six seven' .split(' ').forEach(i=>{ %>
+        <section class="main-item item-<%-i%>">
+          <img src="" alt="img" class="overlay">
+          <h1 class="title"><%-i%></h1>
+          <div class="content">
+          </div>
+          <div class="buttons">button</div>
+        </section>
+      <% }) %>
     </section>
   </main>
+  <!-- <section id="page">
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>Main area</main>
+    <footer>Footer</footer>
+  </section> -->
 </body>
 </html>
