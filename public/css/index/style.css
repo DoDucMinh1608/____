@@ -618,7 +618,6 @@ main .container {
   display: grid;
   width: 100%;
   height: 100%;
-  background-color: rgb(60, 60, 60);
   gap: 10px;
   grid-template-areas: "one two three" "four five three" "six six seven";
 }
@@ -645,4 +644,37 @@ main .container .main-item.item-seven {
 }
 main .container .main-item {
   border: 2px solid black;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, rgba(0, 255, 255, 0.303), rgba(0, 128, 0, 0.21));
+  position: relative;
+  padding: 2px;
+}
+main .container .main-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .container .main-item .info {
+  padding: 10px;
+}
+main .container .main-item .info h1.title {
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+main .container .main-item .info .buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+main .container .main-item .info button {
+  outline: none;
+  border: 1px solid white;
+  padding: 5px 20px;
+  color: white;
+  border-radius: 10px;
+}
+main .container .main-item .info .content {
+  font-size: 1.2rem;
 }

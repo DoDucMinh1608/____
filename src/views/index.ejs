@@ -16,22 +16,22 @@
   </header>
   <main>
     <section class="container">
-      <% 'one two three four five six seven' .split(' ').forEach(i=>{ %>
+      <% 'one two three four five six seven' .split(' ').forEach((i, index)=> { %>
         <section class="main-item item-<%-i%>">
           <img src="" alt="img" class="overlay">
-          <h1 class="title"><%-i%></h1>
-          <div class="content">
+          <div class="info">
+            <h1 class="title"><%-i%></h1>
+            <div class="content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia similique nulla aliquid quibusdam quaerat earum sapiente odio natus voluptas quam sequi voluptatum, iure nemo deleniti dicta, tenetur illo aliquam magni.
+            </div>
+            <div class="buttons">
+              <button>Click</button>
+              <button>UwU</button>
+            </div>
           </div>
-          <div class="buttons">button</div>
         </section>
       <% }) %>
     </section>
   </main>
-  <!-- <section id="page">
-    <header>Header</header>
-    <nav>Navigation</nav>
-    <main>Main area</main>
-    <footer>Footer</footer>
-  </section> -->
 </body>
 </html>
