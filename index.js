@@ -10,5 +10,6 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, 'src', "views"));
 
 app.use('/', require('./src/routes/Routes/index'))
+app.use('/todo', require('./src/routes/Routes/todo'))
 
 app.listen(3000, () => console.log('Listen on port 3000...'))
