@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const path = require('path')
 const server = require('./src/server/server')
 
@@ -16,4 +17,5 @@ app.use('/', require('./src/routes/Routes/index'))
 app.use('/todo', require('./src/routes/Routes/todo'))
 app.use('/chat', require('./src/routes/Routes/chatapp'))
 
+mongoose.connect('mongodb://127.0.0.1:27017/', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('Connected to the db...'))
 Server.init(3000)
