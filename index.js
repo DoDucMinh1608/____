@@ -14,5 +14,6 @@ app.set("views", path.join(__dirname, 'src', "views"));
 
 app.use('/', require('./src/routes/Routes/index'))
 app.use('/todo', require('./src/routes/Routes/todo'))
+app.use('/chat', require('./src/routes/Routes/chatapp'))
 
 Server.init(3000)
