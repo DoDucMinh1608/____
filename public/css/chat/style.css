@@ -581,3 +581,19 @@ summary {
 template {
   display: none;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: #f7f7ff;
+}
+
+main {
+  margin-top: 40px;
+  border: solid 2px black;
+  min-width: 200px;
+}

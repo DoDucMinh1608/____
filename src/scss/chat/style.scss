@@ -1,2 +1,17 @@
 @use '../reset';
-@use '../utilities';
+@use '../utilities' as ut;
+@use './var' as v;
+
+body {
+  @include ut.alignCenter();
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: v.$body-bg;
+}
+
+main {
+  margin-top: 40px;
+  border: solid 2px black;
+  min-width: 200px;
+}
