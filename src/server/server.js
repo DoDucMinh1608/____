@@ -1,10 +1,10 @@
 const http = require('http')
-const { Server } = require('socket.io')
+const io = require('socket.io')
 
 module.exports = class {
   constructor(app) {
     this.server = http.createServer(app)
-    this.io = new Server(this.server)
+    this.io = io(this.server)
   }
   _events() {
     this.io.on('connection', function (socket) {
