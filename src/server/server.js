@@ -10,6 +10,13 @@ module.exports = class {
     this.io.on('connection', function (socket) {
       console.log('An user joined')
 
+      socket.on('send-message', data => {
+        console.log(data)
+
+        socket.broadcast.emit('send-message', data)
+        socket.emit('send-message', Object.assign(data, { owner: true }))
+      })
+
       socket.on('disconnect', () => {
         console.log('A user left')
       })

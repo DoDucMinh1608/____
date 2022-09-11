@@ -7,11 +7,38 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  position: relative;
   background: v.$body-bg;
 }
 
 main {
-  margin-top: 40px;
-  border: solid 2px black;
-  min-width: 200px;
+  min-width: 90%;
+  min-height: 100%;
+  overflow-y: auto;
+  display: grid;
+  background-color: gray;
+  border-end-end-radius: 20px;
+  border-end-start-radius: 20px;
+
+  input {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    width: 90vw;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 40px;
+  }
+
+  .message {
+    margin: 5px 5px;
+    border-bottom: 2px black solid;
+    color: white;
+    text-align: left;
+  }
+
+  .date {
+    font-size: .8rem;
+  }
 }
