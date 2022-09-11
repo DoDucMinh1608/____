@@ -1,11 +1,9 @@
 const express = require('express')
-const { Server } = require('socket.io')
-const http = require('http')
 const path = require('path')
+const server = require('./src/server/server')
 
 const app = express()
-const server = http.createServer(app)
-const io = new Server(server)
+const Server = new server(app)
 
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
@@ -17,6 +15,4 @@ app.set("views", path.join(__dirname, 'src', "views"));
 app.use('/', require('./src/routes/Routes/index'))
 app.use('/todo', require('./src/routes/Routes/todo'))
 
-server.listen(3000, () => {
-  console.log('listening on 3000')
-})
+Server.init(3000)
