@@ -1,0 +1,11 @@
+@use '../reset';
+@use '../utilities' as ut;
+@use './var' as v;
+
+body {
+  @include ut.alignCenter();
+  background: v.$body-bg;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}

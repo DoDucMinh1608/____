@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently npm:uwu-*",
     "uwu-start": "nodemon index.js",
-    "uwu-scss": "sass --watch --poll --no-source-map --charset src/scss:public/css",
+    "uwu-scss": "sass --watch --poll --no-source-map --charset src/clients/scss:src/clients/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

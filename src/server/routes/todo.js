@@ -1,7 +1,8 @@
 const express = require('express')
-const config = require('../Config/index')
 const router = express.Router()
 
-router.route('/').get(config.GET)
+router.route('/').get((req, res) => {
+  res.render('todo')
+})
 
 module.exports = router
