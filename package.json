@@ -1,0 +1,30 @@
+{
+  "name": "fuck-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "uwu": "nodemon index.ts"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoDucMinh1608/____.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoDucMinh1608/____/issues"
+  },
+  "homepage": "https://github.com/DoDucMinh1608/____#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "typescript": "^4.8.3"
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.19"
+  }
+}
