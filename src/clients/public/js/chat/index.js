@@ -1,3 +1,8 @@
-const socket = io('/uwu')
+const socket = io('/chat')
 
-socket.emit('hello', 'uwu')
+const form = document.querySelector('form')
+
+
+if (!localStorage.getItem('ID')) {
+  window.location.replace('./chat/log-in')
+}

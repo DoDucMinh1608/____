@@ -6,8 +6,7 @@
   "scripts": {
     "start": "concurrently npm:uwu-*",
     "uwu-start": "nodemon index.js",
-    "uwu-scss": "sass --watch --poll --no-source-map --charset src/clients/scss:src/clients/public/css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "uwu-scss": "sass --watch --poll --no-source-map --charset src/clients/scss:src/clients/public/css"
   },
   "repository": {
     "type": "git",
@@ -23,6 +22,7 @@
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
     "mongoose": "^6.6.0",
     "sass": "^1.54.9",
     "scss-reset": "^1.2.2",

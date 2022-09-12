@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="css/index/style.css">
-  <script src="/socket.io/socket.io.js" defer></script>
-  <script src="js/index/index.js" defer type="module"></script>
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <a class="logo" href="/">Main</a>
-    </nav>
-  </header>
-  <main>
-    <section class="container">
-      <% 'one two three four five six seven' .split(' ').forEach((i, index)=> { %>
-        <section class="main-item item-<%-i%>">
-          <img src="" alt="img" class="overlay">
-          <div class="info">
-            <h1 class="title"><%-i%></h1>
-            <div class="content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia similique nulla aliquid quibusdam quaerat earum sapiente odio natus voluptas quam sequi voluptatum, iure nemo deleniti dicta, tenetur illo aliquam magni.
-            </div>
-            <div class="buttons">
-              <button>Click</button>
-              <button>UwU</button>
-            </div>
-          </div>
-        </section>
-      <% }) %>
+<%- contentFor('init') %>
+<link rel="stylesheet" href=".././../css/index/style.css">
+<script src=".././../js/index/index.js" type="module" defer></script>
+
+<%- contentFor('body') %>
+<header>
+  <nav class="navbar">
+    <a class="logo" href="/">Main</a>
+  </nav>
+</header>
+<main>
+  <section class="container">
+    <% 'one two three four five six seven' .split(' ').forEach((i, index)=> { %>
+    <section class="main-item item-<%-i%>">
+      <img src="" alt="img" class="overlay">
+      <div class="info">
+        <h1 class="title"><%-i%></h1>
+        <div class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia similique nulla aliquid quibusdam quaerat earum sapiente odio natus voluptas quam sequi voluptatum, iure nemo deleniti dicta, tenetur illo aliquam magni.
+        </div>
+        <div class="buttons">
+          <button>Click</button>
+          <button>UwU</button>
+        </div>
+      </div>
     </section>
-  </main>
-</body>
-</html>
+    <% }) %>
+  </section>
+</main>

@@ -6,7 +6,7 @@ module.exports = class {
     this.server = http.createServer(app)
     this.io = new Server(this.server)
   }
-  addServer(path = '') {
+  getServer(path = '') {
     return this.io.of(path)
   }
   init(port) {
