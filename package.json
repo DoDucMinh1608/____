@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently npm:uwu-*",
+    "dev": "concurrently npm:uwu-*",
     "uwu-start": "nodemon index.js",
     "uwu-scss": "sass --watch --poll --no-source-map --charset src/clients/scss:src/clients/public/css"
   },
