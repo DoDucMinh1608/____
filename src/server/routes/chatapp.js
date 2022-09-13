@@ -32,4 +32,10 @@ router.route('/register').get((req, res) => {
   }
   res.redirect('./log-in')
 })
+
+router.route('/e').post(async (req, res) => {
+  const user = await Account.findById(req.body.ID)
+  if (user) return res.send('Validate')
+  res.send('Invalid')
+})
 module.exports = router
