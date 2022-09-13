@@ -3,6 +3,7 @@ Register
 
 <%- contentFor('init') %>
 <link rel="stylesheet" href=".././../css/chat/register.css">
+<script src=".././../js/chat/register.js" defer type="module"></script>
 
 <%- contentFor('body') %>
 <main>
@@ -16,5 +17,6 @@ Register
         <button type="submit">Register</button>
       </section>
     </form>
+    <p class="error"><%- locals.error %></p>
   </div>
 </main>

@@ -23,6 +23,19 @@ body {
 
   >aside {
     background: rgb(54, 54, 54);
+    display: grid;
+    grid-template-rows: 1fr 50px;
+
+    .avt {
+      @include ut.alignCenter();
+      padding: 20px;
+      justify-content: space-between;
+      border-top: 2px solid black;
+
+      .setting {
+        color: white;
+      }
+    }
   }
 
   >main {

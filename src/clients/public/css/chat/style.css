@@ -18,6 +18,19 @@ body {
 }
 .container > aside {
   background: rgb(54, 54, 54);
+  display: grid;
+  grid-template-rows: 1fr 50px;
+}
+.container > aside .avt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  border-top: 2px solid black;
+}
+.container > aside .avt .setting {
+  color: white;
 }
 .container > main {
   display: grid;

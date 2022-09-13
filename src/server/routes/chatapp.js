@@ -1,7 +1,8 @@
 const express = require('express')
-const router = express.Router()
 const Account = require('../db/account')
+const AccountSm = Account.schema.obj
 
+const router = express.Router()
 router.route('/').get((req, res) => {
   res.render('chat/index')
 })
@@ -19,8 +20,16 @@ router.route('/register').get((req, res) => {
   res.render('chat/register')
 }).post(async (req, res) => {
   const data = req.body
-  const newAccount = new Account({ username: data.username, password: data.password })
-  await newAccount.save()
+  try {
+    const newAccount = new Account({ username: data.username, password: data.password })
+    await newAccount.save()
+  } catch (e) {
+    let error;
+    if (!data.username) error = 'insert username'
+    else if (!data.password) error = 'insert password'
+    else if (data.password.length < AccountSm.password.minlength) error = 'need longer password'
+    return res.render('chat/register', { error })
+  }
   res.redirect('./log-in')
 })
 module.exports = router

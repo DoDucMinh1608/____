@@ -14,9 +14,10 @@ button {
 }
 
 main {
-  width: max-content;
-  height: 40%;
-  margin: 0 auto;
+  min-width: max-content;
+  background-color: rgb(87, 87, 87);
+  padding: 100px;
+  border-radius: 20px;
 }
 
 .title {
@@ -37,6 +38,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 10px;
 
   .links {
     display: flex;
