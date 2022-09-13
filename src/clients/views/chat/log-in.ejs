@@ -1,29 +1,32 @@
+<%- contentFor('title') %>
+Log-in
+
 <%- contentFor('init') %>
 <link rel="stylesheet" href=".././../css/chat/login.css">
+<script>
+  const id = `<%- locals.id %>`
+  const name = `<%- locals.name %>`
+  if (id) {
+    localStorage.setItem('ID', id)
+    localStorage.setItem('name', name)
+    window.location.replace('../chat')
+  }
+</script>
 <script src=".././../js/chat/log-in.js" defer type="module"></script>
 
 <%- contentFor('body') %>
 <main>
-  <div class="logo">
-    <img src=".././../imgs/chat/logo.png" alt="">
-  </div>
   <div class="title">
     <h3>Sign in</h3>
-    <p>Sign in to continue to Chatvia</p>
   </div>
   <div class="form">
-    <form class="login-form">
-      <section class="email">
-        <label for="Email" class="field-lable">Email</label>
-        <input type="email" id="Email" placeholder="Enter your email">
-        <p class="warning">Email is mandatory</p>
+    <form class="login-form" method="post">
+      <%- include('../partials/accountInputForm') %>
+      <p class="warning"><%- locals.error %></p>
+      <section class="links">
+        <button type="submit">Login</button>
+        <a href="./register">Register</a>
       </section>
-      <section class="password">
-        <label for="Password" class="field-lable">Password</label>
-        <input type="password" id="Password" placeholder="Enter your password">
-        <p class="warning">Email is mandatory</p>
-      </section>
-      <input type="submit" value="Sign In">
     </form>
   </div>
 </main>

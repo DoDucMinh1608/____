@@ -26,7 +26,8 @@
     "mongoose": "^6.6.0",
     "sass": "^1.54.9",
     "scss-reset": "^1.2.2",
-    "socket.io": "^4.5.2"
+    "socket.io": "^4.5.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "concurrently": "^7.4.0",

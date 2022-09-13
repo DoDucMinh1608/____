@@ -19,7 +19,7 @@ app.use('/', require('./src/server/routes/index'))
 app.use('/todo', require('./src/server/routes/todo'))
 app.use('/chat', require('./src/server/routes/chatapp'))
 
-mongoose.connect('mongodb://127.0.0.1:27017/', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('Connected to the db...'))
+mongoose.connect('mongodb://127.0.0.1:27017/____', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('Connected to the db...'))
 
 Server.getServer('/chat').on('connection', require('./src/server/namespaces/chat'))
 
