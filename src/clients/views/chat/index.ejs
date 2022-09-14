@@ -3,6 +3,10 @@ Chatapp
 
 <%- contentFor('init') %>
 <link rel="stylesheet" href=".././../css/chat/style.css">
+<script>
+  const data = `<%- locals %>`
+  console.log(data)
+</script>
 <script src=".././../js/chat/index.js" defer type="module"></script>
 
 <%- contentFor('body') %>
@@ -16,24 +20,24 @@ Chatapp
         <button class="join-server-btn">Join</button>
       </section>
       <section class="server-forms">
-        <div class="server-form create-server hidden">
-          <form action="create-server" method="post">
-            <input type="text" maxlength="20" minlength="1" placeholder="Input your server name...">
+        <div class="server-form create-server">
+          <form action="chat/create-server" method="post">
+            <input name="server-name" type="text" maxlength="20" minlength="1" placeholder="Input your server name...">
           </form>
           <button class="close-form">X</button>
         </div>
-        <div class="server-form join-server hidden">
-          <form action="join-server" method="post">
-            <input type="text" minlength="1" placeholder="Input your server ID...">
+        <div class="server-form join-server">
+          <form action="chat/join-server" method="post">
+            <input name="server-id" type="text" minlength="1" placeholder="Input your server ID...">
           </form>
           <button class="close-form">X</button>
         </div>
       </section>
       <section class="server-list">
-        <div class="server" data-server-id="">
+        <!-- <div class="server" data-server-id="">
           <span class="server-name">UwU</span>
           <button class="delete-server">-</button>
-        </div>
+        </div> -->
       </section>
     </section>
     <div class="sidebar-section avt">

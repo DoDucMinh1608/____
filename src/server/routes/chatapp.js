@@ -1,5 +1,7 @@
 const express = require('express')
 const Account = require('../db/account')
+const chatRoom = require('../db/chat/chatroom')
+
 const AccountSm = Account.schema.obj
 
 const router = express.Router()
@@ -37,5 +39,25 @@ router.route('/e').post(async (req, res) => {
   const user = await Account.findById(req.body.ID)
   if (user) return res.send('Validate')
   res.send('Invalid')
+}).get((req, res) => {
+  res.render('chat/e', { layout: 'layouts/layoutB' })
+})
+
+router.route('/create-server').post(async (req, res) => {
+  const data = req.body;
+
+  const account = await Account.findById(data['server-owner'])
+
+  const newChatRoom = new chatRoom({
+    name: data['server-name'],
+    owner: account,
+    members: [account]
+  })
+  account.own.push(newChatRoom)
+
+  await newChatRoom.save()
+  await account.save()
+
+  res.render('chat/index', account)
 })
 module.exports = router

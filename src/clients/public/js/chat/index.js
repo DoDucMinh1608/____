@@ -2,26 +2,41 @@ if (!localStorage.getItem('ID')) window.location.replace('./chat/log-in')
 
 const socket = io('/chat')
 
-const form = document.querySelector('.input-message')
+const inputMessages = $('.input-message')
 
-const serverTools = document.querySelector('.server-tools')
-const createServerBtn = document.querySelector('.create-server-btn')
-const joinServerBtn = document.querySelector('.join-server-btn')
+const serverTools = $('.server-tools')
+const createServerBtn = $('.create-server-btn')
+const joinServerBtn = $('.join-server-btn')
 
-const serverForm = document.querySelector('.server-forms')
-const createServerForm = document.querySelector('.create-server')
-const joinServerForm = document.querySelector('.join-server')
-const closeButtons = document.querySelectorAll('.close-form')
+const serverForms = $('.server-forms')
+const createServerForm = $('.create-server')
+createServerForm.hide()
+const joinServerForm = $('.join-server')
+joinServerForm.hide()
+const closeButtons = $('.close-form')
 
-function displayForm(elem) {
-  serverForm.querySelector('.server-form:not(.hidden)')?.classList.add('hidden')
-  elem.classList.remove('hidden')
+function displayForm(e) {
+  const target = e.target
+  if (target.classList.contains('server-tools')) return
+
+  const elem = $(`.${target.classList[0].replace('-btn', '')}`)
+  elem.closest('.server-forms').children(':visible').hide()
+  elem.show()
 }
-
 function closeForm() {
-  this.closest('.server-form').classList.add('hidden')
+  $(this).closest('.server-form').hide()
 }
 
-closeButtons.forEach(elem => elem.addEventListener('click', closeForm))
-createServerBtn.addEventListener('click', displayForm.bind({}, createServerForm))
-joinServerBtn.addEventListener('click', displayForm.bind({}, joinServerForm))
+closeButtons.click(closeForm)
+serverTools.click(displayForm)
+
+function submitForm(e) {
+  e.preventDefault()
+  const form = $(e.target)
+  const account = localStorage.getItem('ID')
+  console.log(form.children('input').val())
+  form.append($('<input>', { type: 'text', name: 'server-owner' }).hide().val(account))
+  $(this).off('submit', submitForm)
+  form.submit()
+}
+serverForms.submit(submitForm)

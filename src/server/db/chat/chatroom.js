@@ -3,6 +3,7 @@ const { Schema, model } = mongoose;
 
 const chatRoom = new Schema({
   name: { type: String, required: true, minlength: 1 },
+  owner: { type: Schema.Types.ObjectId, ref: 'Account', required: true },
   messages: { type: [Schema.Types.ObjectId], ref: 'Message', default: [] },
   members: { type: [Schema.Types.ObjectId], ref: 'Account', default: [] },
 })
